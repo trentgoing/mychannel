@@ -5,8 +5,6 @@ var path = require('path');
 var app = express();
 app.use(parser.json());
 
-
-console.log(path.join(__dirname, '/../node_modules'));
 app.use(express.static(path.join(__dirname, '/../client')));
 app.use(express.static(path.join(__dirname, '/../node_modules')));
 
