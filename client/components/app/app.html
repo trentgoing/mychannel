@@ -1,12 +1,12 @@
 <div class="container-fluid">
   <div>My Channel</div>
   <div class="row">
-    <div class="queue-rail col-md-4" >
+    <div class="queue-rail col-md-3" >
       <queue-adder post-link="$ctrl.postNewLink"></queue-adder>
       <content-queue queue="$ctrl.queue"></content-queue>
     </div>
-    <div class="content-display col-md-8">
-      <content-display ></content-display>
+    <div class="content-display col-md-9">
+      <content-display current-url="$ctrl.currentLink"></content-display>
     </div>
   </div>
 </div>

@@ -9,3 +9,9 @@
 input {
   display: inline-block;
 }
+
+.display-window {
+  height: 100%;
+  width: 100%;
+  margin-top: 15px;
+}
