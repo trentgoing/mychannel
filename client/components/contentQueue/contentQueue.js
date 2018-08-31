@@ -3,6 +3,9 @@ angular.module('my-channel')
   
 })
 .component('contentQueue', {
+  bindings: {
+    queue: '<'
+  },
   controller: 'QueueController',
   templateUrl: './components/contentQueue/contentQueue.html'
 });

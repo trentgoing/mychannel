@@ -1,0 +1,11 @@
+.content-display {
+  background-color: grey;
+}
+
+.queue-rail {
+  overflow: hidden;
+}
+
+input {
+  display: inline-block;
+}

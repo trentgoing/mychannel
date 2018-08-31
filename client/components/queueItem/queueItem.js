@@ -3,6 +3,9 @@ angular.module('my-channel')
   
 })
 .component('queueItem', {
+  bindings: {
+    link: '<'
+  },
   controller: 'QueueItemController',
   templateUrl: './components/queueItem/queueItem.html'
 });

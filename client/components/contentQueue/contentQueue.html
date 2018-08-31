@@ -1,5 +1,4 @@
 <div>This is my queue of sites</div>
 <ol>
-  <li><queue-item></queue-item></li>
-  <li><queue-item></queue-item></li>
+  <li ng-repeat="link in $ctrl.queue"><queue-item link="link"></queue-item></li>
 </ol>
