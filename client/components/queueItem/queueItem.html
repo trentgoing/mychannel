@@ -1,5 +1,6 @@
-<div>
-  <a ng-click="$ctrl.changeSite($ctrl.link)" href='#'>{{$ctrl.link.url}}</a>
+<div >
+  <a ng-if="$ctrl.link.title" ng-click="$ctrl.changeSite($ctrl.link)" href='#'>{{$ctrl.link.title}}</a>
+  <a ng-if="!$ctrl.link.title" ng-click="$ctrl.changeSite($ctrl.link)" href='#'>{{$ctrl.link.url}}</a>
   <p>{{$ctrl.link.note}}</p>
   <button class="btn btn-primary" ng-click="$ctrl.removeLink($ctrl.link)">Mark as Read</a>
 </div>

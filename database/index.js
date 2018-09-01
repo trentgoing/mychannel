@@ -7,7 +7,10 @@ let linkSchema = mongoose.Schema({
   creator: String,
   note: String,
   read: { type: String, defualt: false },
-  updated_at: Date
+  updated_at: Date,
+  title: String,
+  xframe: Boolean,
+  content: String,
 });
 
 const Link = mongoose.model('Link', linkSchema);
@@ -23,7 +26,10 @@ let save = (linkToSave) => {
       note: linkToSave.note,
       creator: linkToSave.creator || 'trentgoing',
       read: false,
-      updated_at: new Date()
+      updated_at: new Date(),
+      title: linkToSave.title,
+      xframe: linkToSave.xframe,
+      content: linkToSave.content
     },
     {
       upsert: true,

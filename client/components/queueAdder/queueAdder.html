@@ -1,13 +1,13 @@
 <div>Save a site for later:</div>
 <form>
-  <row>
-    <div>
-      URL:<input type="text" class="form-control" ng-model="$ctrl.link.url" ><br>
-    </div>
-    <div>
+  <div class="row">
+    <div class="col-md-12">
+      URL:<input type="text" class="form-control" ng-model="$ctrl.link.url" >
+    
       Notes:
       <input type="text" class="form-control" ng-model="$ctrl.link.notes">
     </div>
-  </row>
-  <input class="btn btn-small" ng-click="$ctrl.handleSubmit()" type="button" value="Submit">
+  </div>
+  <br>
+  <input class="btn btn-secondary" ng-click="$ctrl.handleSubmit()" type="button" value="Submit">
 </form>

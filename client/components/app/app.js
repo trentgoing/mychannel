@@ -5,7 +5,7 @@ angular.module('my-channel')
 
   this.handleQueueResults = (queueData) => {
     this.queue = queueData;
-    this.currentLink = this.queue[0];
+    this.changeSite(this.queue[0]);
   };
   
   this.postNewLink = (link) => {
@@ -21,9 +21,13 @@ angular.module('my-channel')
   this.changeSite = (link) => {
     console.log('Changing!' + link);
     this.currentLink = link;
+    if (this.currentLink.xframe === true) {
+      console.log('This site cannot be displayed live, the version you see now is saved');
+    }
   }
 
   this.removeLink = (link) => {
+    link.content = '';
     console.log('Marked as read' + JSON.stringify(link));
     routerToServer.removeLink(link, () => {
       routerToServer.getQueue(this.handleQueueResults);

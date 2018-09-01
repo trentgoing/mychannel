@@ -1,1 +1,7 @@
-<iframe class="display-window" ng-src="{{$ctrl.getUrl()}}"></iframe>
+<div ng-if="$ctrl.currentUrl.xframe" class="display-window" >
+    <div class="alert alert-primary" role="alert">
+        This site cannot be displayed live, the version you see now is saved.  <a href="{{$ctrl.getUrl()}}">Visit Live Site</a>
+    </div>
+    <div ng-bind-html="$ctrl.explicitlyTrust()"></div>
+</div>
+<iframe ng-if="!$ctrl.currentUrl.xframe" class="display-window" ng-src="{{$ctrl.getUrl()}}"></iframe>
