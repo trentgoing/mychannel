@@ -33,4 +33,19 @@ angular.module('my-channel')
     })
   };
 
+  this.removeLink = function(link, callback) {
+    $http.put('/links', link)
+    .then((res) => {
+      if (res) {
+        console.log(res);
+      }
+      callback();
+    })
+    .catch(({data}) => {
+      data.error.errors.forEach((err) => {
+        console.log(err);
+      })
+    })
+  };
+
 });

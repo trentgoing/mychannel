@@ -3,7 +3,17 @@
 }
 
 .queue-rail {
-  overflow: hidden;
+  height: 100vh;
+}
+
+.queue-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  top: 275px;
+
 }
 
 input {

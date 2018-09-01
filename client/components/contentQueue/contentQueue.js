@@ -4,7 +4,9 @@ angular.module('my-channel')
 })
 .component('contentQueue', {
   bindings: {
-    queue: '<'
+    queue: '<',
+    changeSite: '<',
+    removeLink: '<'
   },
   controller: 'QueueController',
   templateUrl: './components/contentQueue/contentQueue.html'

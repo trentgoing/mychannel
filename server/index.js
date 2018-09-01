@@ -19,8 +19,20 @@ app.get('/links', function(req, res) {
 });
 
 app.post('/links', function(req, res) {
-  console.log(req.body);
+  console.log('POST: ' + JSON.stringify(req.body));
   db.save(req.body)
+    .then(() => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    })
+});
+
+app.put('/links', function(req, res) {
+  console.log('PUT: ' + JSON.stringify(req.body));
+  db.deleteLink(req.body)
     .then(() => {
       res.sendStatus(201);
     })

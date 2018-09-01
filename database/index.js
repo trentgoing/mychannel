@@ -36,7 +36,24 @@ let fetch = () => {
   return Link.find({ read: false })
              .sort('-updated_at')
              .exec();
-}
+};
+
+let deleteLink = (linkToDelete) => {
+  console.log('In DB: ' + JSON.stringify(linkToDelete));
+  return Link.findOneAndUpdate(
+    {
+      _id: linkToDelete._id
+    },
+    {
+      read: true,
+      updated_at: new Date()
+    },
+    {
+      upsert: true,
+    }
+  ).exec();
+};
 
 module.exports.save = save;
 module.exports.fetch = fetch;
+module.exports.deleteLink = deleteLink;
